@@ -1,0 +1,43 @@
+<div class="container">
+  <h2 class="title">Add New Crop</h2>
+
+  <form [formGroup]="cropForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Crop Name</mat-label>
+      <input matInput formControlName="cropName" />
+      <mat-error *ngIf="cropForm.get('cropName')?.invalid">Crop name is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Crop Type</mat-label>
+      <mat-select formControlName="cropTypeId">
+        <mat-option *ngFor="let type of cropTypes" [value]="type.id">{{ type.name }}</mat-option>
+      </mat-select>
+      <mat-error *ngIf="cropForm.get('cropTypeId')?.invalid">Crop type is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Quantity Available (kg)</mat-label>
+      <input matInput type="number" formControlName="quantityAvailable" />
+      <mat-error *ngIf="cropForm.get('quantityAvailable')?.invalid">Quantity must be greater than 0</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Price (₹ per kg)</mat-label>
+      <input matInput type="number" formControlName="price" />
+      <mat-error *ngIf="cropForm.get('price')?.invalid">Price must be greater than 0</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Crop Location</mat-label>
+      <input matInput formControlName="cropLocation" />
+      <mat-error *ngIf="cropForm.get('cropLocation')?.invalid">Location is required</mat-error>
+    </mat-form-field>
+
+    <input type="file" (change)="onImageSelected($event)" />
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="isSubmitting">Add Crop</button>
+  </form>
+
+  <p *ngIf="successMessage" class="success-message">{{ successMessage }}</p>
+</div>

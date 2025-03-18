@@ -1,0 +1,17 @@
+<div class="container">
+  <h2>All Crops</h2>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Price</th>
+    </tr>
+    <tr *ngFor="let crop of crops">
+      <td>{{ crop.id }}</td>
+      <td>{{ crop.cropName }}</td>
+      <td>{{ crop.cropTypeId }}</td>
+      <td>₹{{ crop.price }}</td>
+    </tr>
+  </table>
+</div>

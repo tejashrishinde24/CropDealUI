@@ -1,0 +1,21 @@
+.navbar-custom {
+    background-color: #c5e1d5; /* Dark Green */
+}
+.navbar-custom .navbar-brand, 
+.navbar-custom .nav-link {
+    color: rgb(45, 88, 68);
+}
+.navbar-custom .nav-link:hover {
+    /* color: #1b4332; Light Green */
+    border-radius: 0.5rem !important;
+    background-color: #548b73;
+    color: white;
+}
+.btn-custom {
+    background-color: #235434; /* Medium Green */
+    color: white !important;
+}
+.btn-custom:hover {
+    background-color: #1b4332; /* Darker Green */
+    color: white;
+}

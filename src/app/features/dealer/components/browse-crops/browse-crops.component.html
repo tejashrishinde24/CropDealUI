@@ -1,0 +1,27 @@
+<div class="browse-container">
+  <!-- Search & Filters -->
+  <div class="search-filter">
+    <input type="text" placeholder="Search crops..." [(ngModel)]="searchText" (input)="filterCrops()">
+    
+    <select [(ngModel)]="selectedCategory" (change)="filterCrops()">
+      <option value="">All Categories</option>
+      <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+    </select>
+    
+    <input type="range" min="0" max="5000" [(ngModel)]="maxPrice" (input)="filterCrops()">
+    <span>Max Price: ₹{{ maxPrice }}</span>
+  </div>
+
+  <hr />
+
+  <!-- Crops List -->
+  <div class="crop-list">
+    <div class="crop-card" *ngFor="let crop of filteredCrops">
+      <img [src]="crop.image" alt="Crop Image">
+      <h3>{{ crop.name }}</h3>
+      <p>Category: {{ crop.category }}</p>
+      <p>Price: ₹{{ crop.price }}/kg</p>
+      <button>Add to Cart</button>
+    </div>
+  </div>
+</div>

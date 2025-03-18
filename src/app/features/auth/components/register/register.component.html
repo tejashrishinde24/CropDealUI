@@ -1,0 +1,101 @@
+<div class="register-container">
+    <h2>REGISTER</h2>
+    <hr />
+  
+    <!-- <form [formGroup]="registerForm" (ngSubmit)="onSubmit()"> -->
+    <form>
+      <table>
+        <tr>
+          <td><label>Name:</label></td>
+          <td>
+            <div class="input-container">
+              <i class="fa fa-user"></i>
+              <input type="text" formControlName="Name" placeholder="Enter your name" required />
+            </div>
+          </td>
+        </tr>
+  
+        <tr>
+          <td><label>Login ID:</label></td>
+          <td>
+            <div class="input-container">
+              <i class="fa fa-id-badge"></i>
+              <input type="text" formControlName="LoginId" placeholder="Enter your login ID" required />
+            </div>
+          </td>
+        </tr>
+  
+        <tr>
+          <td><label>Email ID:</label></td>
+          <td>
+            <div class="input-container">
+              <i class="fa fa-envelope"></i>
+              <input type="email" formControlName="EmailId" placeholder="example@example.com" required />
+            </div>
+          </td>
+        </tr>
+  
+        <tr>
+          <td><label>Password:</label></td>
+          <td>
+            <div class="input-container">
+              <i class="fa fa-lock"></i>
+              <input type="password" formControlName="Password" placeholder="Enter your password" required />
+            </div>
+          </td>
+        </tr>
+  
+        <tr>
+          <td><label>Address:</label></td>
+          <td>
+            <div class="input-container">
+              <i class="fa fa-map-marker"></i>
+              <input type="text" formControlName="Address" placeholder="Enter your address" required />
+            </div>
+          </td>
+        </tr>
+  
+        <tr>
+          <td><label>Role:</label></td>
+          <td>
+            <div class="input-container">
+              <i class="fa fa-user-tag"></i>
+              <input type="text" formControlName="Role" placeholder="Enter your role" required />
+            </div>
+          </td>
+        </tr>
+  
+        <tr>
+          <td><label>Phone Number:</label></td>
+          <td>
+            <div class="input-container">
+              <i class="fa fa-phone"></i>
+              <input type="tel" formControlName="PhoneNumber" placeholder="Enter your phone number" required />
+            </div>
+          </td>
+        </tr>
+  
+        <!-- <tr>
+          <td><label>Is Active:</label></td>
+          <td>
+            <div class="checkbox-group">
+              <input type="checkbox" formControlName="IsActive" />
+              <label>Yes</label>
+            </div>
+          </td>
+        </tr> -->
+      </table>
+  
+      <!-- <div class="recaptcha">
+        <div class="recaptcha-box">
+          <input type="checkbox" />
+          <label>I'm not a robot</label>
+        </div>
+      </div> -->
+  
+      <button type="submit" class="register-btn">Register now</button>
+  
+      <p class="login-text">Already have an account? <a [routerLink]="['/login']">Login here</a></p>
+    </form>
+  </div>
+  
